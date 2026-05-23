@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🎬 FlixZone – Streaming Platform UI
 
 A fully functional Netflix-style streaming UI clone built with pure HTML, CSS, and JavaScript.
@@ -101,4 +101,7 @@ Free to use for learning and personal projects.
 =======
 # flixzone
 FlixZone is a modern Netflix-style streaming platform UI clone built using pure HTML, CSS, and JavaScript.
->>>>>>> 6e9ebc7ca0a967387f9446c910f1ae6bf2f21690
+
+## 🌐 Live Demo
+
+https://codewithleena-flixzone.netlify.app
