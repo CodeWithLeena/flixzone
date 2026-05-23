@@ -39,18 +39,24 @@ Then open: `http://localhost:3000`
 
 ## ✨ Features
 
+## ✨ Features
+
 | Feature | Details |
 |---|---|
-| 🎥 Hero Banner | Full-screen hero with animated background zoom |
-| 📺 Rows | Continue Watching, Trending, Top Picks, New Releases |
-| 🔢 Trending Numbers | Numbered cards like Netflix |
-| 🔍 Search | Real-time title/genre search |
-| 🎭 Genre Filter | Filter by Action, Drama, Sci-Fi, etc. |
-| 🪟 Modal Popup | Click any card → detailed info modal |
-| 📱 Responsive | Works on mobile & desktop |
-| 🌑 Dark Theme | Full dark Netflix-style theme |
-| 📜 Scroll Effect | Navbar becomes solid on scroll |
-| ♾️ Multi-page | Home, TV Shows, Movies pages |
+| 🎥 Hero Banner | Full-screen hero section with animated background zoom |
+| 📺 Content Rows | Continue Watching, Trending, Top Picks, and New Releases |
+| 🔢 Trending Numbers | Netflix-style numbered trending cards |
+| 🔍 Live Search | Real-time title and genre search |
+| 🎭 Genre Filters | Filter content by Action, Drama, Sci-Fi, Thriller, etc. |
+| 🪟 Interactive Modal | Detailed popup modal on card click |
+| 🎬 Hover Animations | Smooth hover scaling and transition effects |
+| ⚡ Dynamic Rendering | Content rendered dynamically using JavaScript |
+| 📱 Fully Responsive | Optimized for desktop, tablet, and mobile devices |
+| 🌑 Dark Theme UI | Modern Netflix-inspired dark streaming interface |
+| 📜 Scroll Navbar Effect | Navbar changes appearance on scroll |
+| ♾️ Multi-page Layout | Separate Home, Movies, and TV Shows pages |
+| 🌐 Live Deployment | Hosted live using Netlify |
+| 📂 GitHub Integration | Managed with Git and GitHub version control |
 
 ## 🎨 Tech Stack
 
@@ -98,9 +104,7 @@ Then open: `http://localhost:3000`
 ## 📄 License
 
 Free to use for learning and personal projects.
-=======
-# flixzone
-FlixZone is a modern Netflix-style streaming platform UI clone built using pure HTML, CSS, and JavaScript.
+
 
 ## 🌐 Live Demo
 
