@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies – FlixZone</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="logo" onclick="location.href='../index.html'">FLIXZONE</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="shows.html">TV Shows</a></li>
+        <li><a href="movies.html" class="active">Movies</a></li>
+        <li><a href="#">New &amp; Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search movies..." />
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="avatar">U</div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>MOVIES</h1>
+    <p>Blockbusters, indie gems, and everything in between</p>
+  </div>
+
+  <div class="categories" style="padding: 0 48px 28px;">
+    <button class="cat active" data-genre="all">All</button>
+    <button class="cat" data-genre="Action">Action</button>
+    <button class="cat" data-genre="Thriller">Thriller</button>
+    <button class="cat" data-genre="Drama">Drama</button>
+    <button class="cat" data-genre="Comedy">Comedy</button>
+    <button class="cat" data-genre="Sci-Fi">Sci-Fi</button>
+    <button class="cat" data-genre="Horror">Horror</button>
+    <button class="cat" data-genre="Hindi">Hindi</button>
+  </div>
+
+  <div class="grid-section">
+    <div class="cards-grid" id="moviesGrid"></div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-hero"></div>
+      <div class="modal-body">
+        <div class="modal-btns">
+          <button class="btn-play">▶ Play</button>
+          <button class="btn-list">+ My List</button>
+          <button class="btn-like">👍</button>
+        </div>
+        <h2 class="modal-title" id="modalTitle">Movie Title</h2>
+        <div class="modal-meta"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#">FAQ</a><a href="#">Help Centre</a><a href="#">Privacy</a><a href="#">Terms</a>
+    </div>
+    <p class="footer-copy">© 2024 FlixZone Entertainment. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    // Movies page uses same shows data (in real app this would be a separate dataset)
+    const MOVIES = SHOWS.map((s, i) => ({
+      ...s,
+      duration: `${Math.floor(90 + i * 7)}m`,
+      id: s.id + 100
+    }));
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGrid('moviesGrid', MOVIES);
+
+      document.querySelectorAll('.cat').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cat').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const genre = btn.dataset.genre;
+          const filtered = genre === 'all' ? MOVIES
+            : genre === 'Hindi' ? MOVIES.filter(s => s.language === 'Hindi')
+            : MOVIES.filter(s => s.genre === genre);
+          renderGrid('moviesGrid', filtered);
+        });
+      });
+
+      const si = document.getElementById('searchInput');
+      if (si) {
+        si.addEventListener('input', e => {
+          const q = e.target.value.toLowerCase();
+          const filtered = !q ? MOVIES : MOVIES.filter(s =>
+            s.title.toLowerCase().includes(q) || s.genre.toLowerCase().includes(q)
+          );
+          renderGrid('moviesGrid', filtered);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
