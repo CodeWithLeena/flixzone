@@ -105,3 +105,14 @@ FlixZone is a modern Netflix-style streaming platform UI clone built using pure 
 ## 🌐 Live Demo
 
 https://codewithleena-flixzone.netlify.app
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](screenshots/home.png)
+
+### Movies Page
+![Movies](screenshots/movies.png)
+
+### Mobile View
+![Mobile](screenshots/mobile.png)
